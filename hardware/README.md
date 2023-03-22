@@ -69,8 +69,10 @@ Below one can find table of connections between MCU and other electrical compone
 ## Buttons
 Overall, two buttons were used for the purpose of controlling the modes of FLASH and UART-DOWNLOAD. This modes are possible with specific configuration of GPIO pins:
 
+
+
 <p align='center'>
-<img src=2023-03-22-00-30-15.png>
+<img src=2023-03-22-23-33-54.png>
 </p>
 
 SW1: Is used specifically for IO0 since, it is the main pin that is being changed from GND to 3V3(High).
@@ -79,9 +81,24 @@ SW2: Is used for enable 'EN' pin functionality, since, it is need to turn on and
 
 NOTE: 10K ohm pull-up/pull-down resistors were added to named pins in schematic.
 ## Loadcell amplifiers
-...
+HX711 is an analog to digital converter specifically designed for weight scale applications. In this project two of such chips are being used for each loadcell sensor module. During assembly this board can be used at two different configurations as given below:
+
+- On-chip analog supply regulator used: When this configuration is being used, few components should be added such as Q1 ob BASE pin, VFB pin should have voltage divider resistor configuration.
+
+- Off-chip analog supply regulator used: WHen using voltage regulator outside of the IC previously mentioned components should be removed.
+
+In both cases rate of data output is set to 10HZ by connection from RATE(RATE=0) to GND. Gain of the HX711 can be set up during programming by different number of pulses to SCK pin. For simplification a table can be given as below, but it is highly recommended to consult to datasheet:
+
+| ESP_SCK_1, ESP_SCK_2 PULSES | INPUT_CHANNEL | GAIN | USED? |
+| :-------------------------: | :-----------: | :--: | :---: |
+|             25              |       A       | 128  |  YES  |
+|             26              |       B       |  32  |  NO   |
+|             27              |       A       |  64  |  YES  |
+
 ## Temperature sensors
-...
+In order to conduct full measurement with maximum precision we also need to include temperature sensor. Apart from obvious reason including temperature sensor also helps detect changes on load-cell modules thus, two of these sensors were included in the project. For connections JST-B3B connectors are used described in `Connections` section. Aditionally, sensor is capable of measuring wide range of temperature (-55deg <-> 125deg). More about the sensor can be found here:
+
+https://botland.store/waterproof-probes/15245-waterproof-probe-with-temperature-sensor-ds18b20-1m-iduino-3ds024-5903351242479.html
 ## Voltage Regulator
 ...
 ## Voltage Reference
