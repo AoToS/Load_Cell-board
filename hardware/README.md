@@ -140,7 +140,7 @@ across 3V3 pads. Most of the components are placed on the front of the board. Th
 Front layer can be shown as below:
 ![Front_Raw](2023-03-27-15-22-59.png)
 
-3D version:4
+3D version:
 
 ![Front_3D](2023-03-27-15-21-48.png)
 
