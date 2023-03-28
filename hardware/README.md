@@ -80,7 +80,7 @@ Below one can find table of connections between MCU and other electrical compone
 ## Buttons
 Overall, two buttons were used for the purpose of controlling the modes of FLASH and UART-DOWNLOAD. This modes are possible with specific configuration of GPIO pins:
 <p align='center'>
-<img src=2023-03-22-00-30-15.png>
+<img src=2023-03-22-23-33-54.png>
 </p>
 
 - SW1: Is used specifically for IO0 since, it is the main pin that is being changed from GND to 3V3(High).
@@ -140,7 +140,8 @@ across 3V3 pads. Most of the components are placed on the front of the board. Th
 Front layer can be shown as below:
 ![Front_Raw](2023-03-27-15-22-59.png)
 
-3D version:
+3D version:4
+
 ![Front_3D](2023-03-27-15-21-48.png)
 
 ## Back layer
@@ -150,6 +151,7 @@ Back layer can be demonstrated in such way:
 ![Back_Raw](2023-03-27-15-18-52.png)
 
 And 3D version:
+
 ![Back_3D](2023-03-27-15-20-21.png)
 
 ## Manufacturing requirements
